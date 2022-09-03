@@ -19,7 +19,7 @@ def spam1():
 	url = "https://discord.com/api/v9/auth/forgot"
 	data = {"login": f"+66{phone}","captcha_key": "null"}
 	r = requests.post(url, json=data)
-	print(r.status_code)
+	print("สถานะการร้องขอ api : ", r.status_code)
 	
 	
 
