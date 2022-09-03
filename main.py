@@ -3,13 +3,11 @@ from re import search
 from random import choice
 from string import ascii_uppercase, digits
 from concurrent.futures import ThreadPoolExecutor
-from discord.ext import commands
-import discord
-from discord.ext.commands import Bot
 import asyncio
 import threading
 import requests
 import os
+
 
 
 os.system("clear")
