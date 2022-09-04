@@ -1,13 +1,9 @@
 from requests import post, Session
-from re import search
-from random import choice
-from string import ascii_uppercase, digits
-from concurrent.futures import ThreadPoolExecutor
-import asyncio
-import threading
-import requests
+from colorama import Fore
 import os
 import time
+import requests
+import threading
 import urllib.request
 
 
@@ -40,17 +36,21 @@ set_download_link("https://raw.githubusercontent.com/ZeroN2/auto-update-test/mai
 
 
 
-version = "1.1"
+version = "1.2"
 api = "1"
 
 os.system("clear")
-print("              Version Script : ",version)
-print("           Total Api : ",api)
-print("         Free Script Spam Phone")
+os.system("figlet L i lJoiTXia")
+print(Fore.RED + "              Version Script : ",version)
+print(Fore.RED + "              Total Api : ",api)
+print(Fore.RED + "              Free Script Spam Phone")
 print("")
 print("")
-choice = input("1 ==> Update Script \n2 ==> Run Script \n\nEnter Choice ==> ")
+
+choice = input(Fore.RED + "1 ==> Update Script \n2 ==> Run Script \n\nEnter Choice ==> ")
 choice = int(choice)
+
+
 
 
 if choice == 1:
