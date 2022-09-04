@@ -15,7 +15,7 @@ AutoUpdate.set_download_link("https://raw.githubusercontent.com/ZeroN2/auto-upda
 AutoUpdate.set_current_version("0")
 
 
-version = "1"
+version = "1.1"
 api = "1"
 
 os.system("clear")
@@ -32,7 +32,7 @@ if choice == 1:
 	os.system("clear")
 	print("กำลังโหลดอัพเดท...")
 	time.sleep(2)
-	#AutoUpdate.download("main.py")
+	AutoUpdate.download("main.py")
 	print("อัพเดทไฟล์เสร็จแล้ว...")
 	time.sleep(2)
 	os.system("clear && python3 main.py")
