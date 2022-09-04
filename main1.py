@@ -6,13 +6,38 @@ from concurrent.futures import ThreadPoolExecutor
 import asyncio
 import threading
 import requests
-import AutoUpdate
 import os
 import time
+import urllib.request
 
-AutoUpdate.set_url("https://raw.githubusercontent.com/ZeroN2/auto-update-test/UpdateAuto/.version")
-AutoUpdate.set_download_link("https://raw.githubusercontent.com/ZeroN2/auto-update-test/main/main1.py")
-AutoUpdate.set_current_version("0")
+
+def set_url(url_):
+    global url; url = url_
+
+def get_latest_version():
+    file = urllib.request.urlopen(url)
+
+    lines = ""
+    for line in file:
+        lines += line.decode("utf-8")
+
+    return lines
+
+def set_current_version(current_):
+    global current; current = current_
+
+def set_download_link(link):
+    global download_link; download_link = link
+
+def is_up_to_date():
+    return current + "\n" == get_latest_version()
+
+def download(path_to_file):
+    urllib.request.urlretrieve(download_link,path_to_file)
+
+set_download_link("https://raw.githubusercontent.com/ZeroN2/auto-update-test/main/main1.py")
+
+
 
 
 version = "1.1"
@@ -32,7 +57,7 @@ if choice == 1:
 	os.system("clear")
 	print("กำลังโหลดอัพเดท...")
 	time.sleep(2)
-	AutoUpdate.download("main.py")
+	download("main.py")
 	print("อัพเดทไฟล์เสร็จแล้ว...")
 	time.sleep(2)
 	os.system("clear && python3 main.py")
