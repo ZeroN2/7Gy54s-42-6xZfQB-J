@@ -14,20 +14,20 @@ try:
 	import colorama
 	import lolpython
 	import requests
-	time.sleep(1)
+	time.sleep(0.7)
 	print("กำลังเช็คการติดตั้งโมดูล...")
-	time.sleep(1)
+	time.sleep(0.7)
 	print("โมดูลที่จำเป็นถูกติดตั้งแล้ว...")
-	time.sleep(2)
+	time.sleep(1.5)
 except ImportError:
 	os.system("clear")
-	time.sleep(1)
+	time.sleep(0.7)
 	print("กำลังเช็คการติดตั้งโมดูล...")
-	time.sleep(1)
+	time.sleep(0.7)
 	print("ยังไม่ได้ติดตั้งโมดูลที่จำเป็น...")
-	time.sleep(1)
+	time.sleep(0.7)
 	print("กำลังติดตั้งโมดูลอัตโนมัติ...")
-	time.sleep(1)
+	time.sleep(0.7)
 	os.system("clear")
 	os.system("pip3 install --upgrade pip && pip3 install lolpython && pip3 install colorama && pip3 install requests && python3 main.py")
 
@@ -36,7 +36,7 @@ except ImportError:
 def check_update2():
 	os.system("clear")
 	lol_py("Check Update...")
-	time.sleep(2)
+	time.sleep(1.5)
 	check_update()
 	
 def check_update():
@@ -59,14 +59,14 @@ def check_update():
 					lol_py("   │░▀▀▀░▀▀▀░▀▀▀░▀▀░░▀▀▀░▀▀▀░░▀░░▀░▀░▀▀▀░▀░▀░░│")
 					lol_py("   └──────────────────────────────────────────┘")
 					print("กำลังโหลดอัพเดท...")
-					time.sleep(2)
+					time.sleep(1.5)
 					print("อัพเดทไฟล์เสร็จแล้ว...")
-					time.sleep(2)
+					time.sleep(1.5)
 					download("main.py")
 					os.system("clear && python3 main.py")
 				elif ww.lower() in ['n','no']:
 					os.system("clear")
-					time.sleep(2)
+					time.sleep(1.5)
 					menu()
 					
 				else:
