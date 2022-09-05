@@ -4,7 +4,7 @@ import threading
 import urllib.request
 
 
-version = "1.1"
+version = "1.2"
 api = "1"
 
 
