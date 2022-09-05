@@ -62,7 +62,7 @@ def check_update():
 					time.sleep(2)
 					print("อัพเดทไฟล์เสร็จแล้ว...")
 					time.sleep(2)
-					#download("main.py")
+					download("main.py")
 					os.system("clear && python3 main.py")
 				elif ww.lower() in ['n','no']:
 					os.system("clear")
